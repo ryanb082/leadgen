@@ -8,6 +8,21 @@ class LeadsController < ApplicationController
     @lead = Lead.new
   end
 
+  def edit
+    @lead = Lead.find(params[:id])
+  end
+
+  def update
+    @lead = Lead.find(params[:id])
+
+    if @lead.update(lead_params)
+      flash[:notice] = "The lead was updated"
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def create
 
     @lead = Lead.new(lead_params)

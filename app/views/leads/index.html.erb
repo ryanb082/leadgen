@@ -12,7 +12,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>#</th>
+          
           <th>Name</th>
           <th>Email</th>
           <th>Phone Number</th>
@@ -21,19 +21,20 @@
           <th>Company Type</th>
         <tr>
       </thead>
+
       <tbody>
      <% @leads.each do |lead| %>
         <tr>
-          <th scope="row">1</th>
           <td><%= lead.name %></td>
           <td><%= lead.email %></td>
           <td><%= lead.phone_number %></td>
           <td><%= lead.website %></td>
           <td><%= lead.company %></td>
           <td><%= lead.company_type %></td>
+          <td><%= link_to 'Edit', edit_lead_path(@leads)%></td>
         </tr>
+    <% end %>
       </tbody>
     </table>
 
-  <% end %>
 </div> 
