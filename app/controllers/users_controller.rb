@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
 
 
-  def show
-    binding.pry
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new
+
+    redirect_to root_path
   end
 end
