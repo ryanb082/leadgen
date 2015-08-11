@@ -1,1 +1,39 @@
-<h1> This will be the index for all the leads</h1>
+<div class="container">
+  <h3>Welcome to LeadGen</h3>
+
+  <p>This is where all the leads will be located</p>
+
+  <p>Leads</p>
+
+
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Leads</div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Website</th>
+          <th>Company</th>
+          <th>Company Type</th>
+        <tr>
+      </thead>
+      <tbody>
+  <% @leads.each do |lead| %>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= lead.name %></td>
+          <td><%= lead.email %></td>
+          <td><%= lead.phone_number %></td>
+          <td><%= lead.website %></td>
+          <td><%= lead.company %></td>
+          <td><%= lead.company_type %></td>
+        </tr>
+      </tbody>
+    </table>
+
+  <% end %>
+</div> 
