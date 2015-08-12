@@ -28,7 +28,7 @@
           <td><%= lead.name %></td>
           <td><%= lead.email %></td>
           <td><%= lead.phone_number %></td>
-          <td><%= lead.website %></td>
+          <td><a href='<%= lead.website %>'><%= lead.website %></a></td>
           <td><%= lead.company %></td>
           <td><%= lead.company_type %></td>
           <td><%= link_to 'Edit', edit_lead_path(lead)%></td>
