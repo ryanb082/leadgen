@@ -1,5 +1,7 @@
 class LeadsController < ApplicationController
 
+before_action :require_user
+
   def index
     @leads = Lead.all
   end
@@ -28,7 +30,7 @@ class LeadsController < ApplicationController
   def create
 
     @lead = Lead.new(lead_params)
-    @lead.creator = User.first  # TODO: change once we have authentication
+    @lead.creator = current_user  # TODO: change once we have authentication
 
     if @lead.save
       flash[:notice] = "Your lead was created"
