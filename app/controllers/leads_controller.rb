@@ -21,7 +21,7 @@ before_action :require_user
 
     if @lead.update(lead_params)
       flash[:notice] = "The lead was updated"
-      redirect_to root_path
+      redirect_to leads_path
     else
       render :edit
     end
@@ -34,7 +34,7 @@ before_action :require_user
 
     if @lead.save
       flash[:notice] = "Your lead was created"
-      redirect_to root_path
+      redirect_to leads_path
     else
       render :new
     end
