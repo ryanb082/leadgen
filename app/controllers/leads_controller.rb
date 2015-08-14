@@ -2,7 +2,9 @@ class LeadsController < ApplicationController
 
 before_action :require_user
 
+
   def index
+
     @leads = Lead.all
   end
 
@@ -28,7 +30,7 @@ before_action :require_user
   end
 
   def create
-
+binding.pry
     @lead = Lead.new(lead_params)
     @lead.creator = current_user  # TODO: change once we have authentication
 
@@ -46,5 +48,7 @@ before_action :require_user
   def lead_params
     params.require(:lead).permit(:name,:email, :phone_number, :website, :company, :company_type)
   end
+
+ 
 
 end

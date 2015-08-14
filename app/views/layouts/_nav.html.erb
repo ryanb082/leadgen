@@ -38,6 +38,11 @@
       <ul class="nav navbar-nav navbar-right">
          <% if logged_in? %>
     <%= link_to 'Log out', logout_path, class: 'btn btn-success btn-small'%>
+    <div class='btn-group nav_item'>
+      <%= link_to('', class: 'btn btn-small dropdown-toggle', 'date-toggle' => 'dropdown') do %>
+        <%= current_user.username %>
+        <span class='caret'></span>
+      <% end %>
   <% else %>
     <%= link_to 'Log In', login_path, class: 'btn btn-primary btn-small' %>
     <%= link_to 'Register', register_path, class: 'btn btn-primary btn-small'%>

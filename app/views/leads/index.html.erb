@@ -13,39 +13,7 @@
 </div>
 
 
-  <div class="panel panel-default">
-    <div class="panel-heading">Leads</div>
-    <table class="table">
-      <thead>
-        <tr>
-          
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone Number</th>
-          <th>Website</th>
-          <th>Company</th>
-          <th>Company Type</th>
-        <tr>
-      </thead>
 
-      <tbody>
-     <% @leads.each do |lead| %>
-        <tr>
-          <td><%= lead.name %></td>
-          <td><%= lead.email %></td>
-          <td><%= lead.phone_number %></td>
-          <td><a href='<%= lead.website %>'><%= lead.website %></a></td>
-          <td><%= lead.company %></td>
-          <td><%= lead.company_type %></td>
-          <% if logged_in? %>
-           <td><%= link_to 'Edit', edit_lead_path(lead), class: 'btn btn-primary btn-small' %></td>
-          <% end %>
-        </tr>
-    <% end %>
-
-      </tbody>
-    </table>
-</div> 
 <%= link_to 'Create New', new_lead_path, class: 'btn btn-primary btn-success' %>
 
 
